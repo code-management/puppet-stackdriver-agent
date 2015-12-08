@@ -40,10 +40,11 @@ class stackdriver (
 
   validate_string ( $apikey )
   validate_array  ( $svc    )
+  $lower_osfamily = downcase($::osfamily)
 
   # Runtime class definitions
-  $iclass = "${name}::install::${::osfamily}"
-  $cclass = "${name}::config::${::osfamily}"
+  $iclass = "${name}::install::${lower_osfamily}"
+  $cclass = "${name}::config::${lower_osfamily}"
   $sclass = "${name}::service"
 
 
